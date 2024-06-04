@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SISTEM ENCRYPT</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            background-color: black;
+            color: lime;
+            overflow: hidden;
+        }
+        #video-background {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+        #credit-button {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background-color: lime;
+            color: black;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        #hacker-text {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .hacker-line {
+            white-space: nowrap;
+            overflow: hidden;
+            margin: 0;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <video id="video-background" src="https://telegra.ph/file/your-video-link.mp4" autoplay loop muted></video>
+    <button id="credit-button" onclick="alert('CelSfwr t.me/AccelGoodBase was here')">Credits</button>
+    <div id="hacker-text"></div>
+    <script>
+        const hackerText = document.getElementById('hacker-text');
+        const hackerLines = 30;
+        const hackerSpeed = 100;
+
+        for (let i = 0; i < hackerLines; i++) {
+            const line = document.createElement('pre');
+            line.className = 'hacker-line';
+            line.textContent = '';
+            hackerText.appendChild(line);
+        }
+
+        function randomChar() {
+            return String.fromCharCode(Math.floor(Math.random() * 94) + 33);
+        }
+
+        function updateLine(line) {
+            line.textContent = randomChar() + line.textContent;
+            setTimeout(() => updateLine(line), hackerSpeed);
+        }
+
+        hackerText.querySelectorAll('.hacker-line').forEach(line => updateLine(line));
+    </script>
+</body>
+</html>
